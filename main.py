@@ -18,3 +18,12 @@ add_contact("Bob", "9876543210")
 
 # Viewing contacts
 view_contacts()
+
+def search_contact(name):
+   found =[contact for contact in contacts if contact["name"].lower() == name.lower()]
+   if found:
+      for contact in found:
+          print(f"\nfound: {contact['name']} - {contact['phone']}")
+   else:
+      print("\nSorry, no contact found with the name you searched.")
+search_contact("Alice")
